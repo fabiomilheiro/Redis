@@ -14,8 +14,7 @@ namespace RedisTest.Broadcaster
         {
             Console.WriteLine("Broadcaster starting...");
 
-            var redis =
-                await ConnectionMultiplexer.ConnectAsync("localhost");
+            var redis = await ConnectionMultiplexer.ConnectAsync("localhost");
 
             var db = redis.GetDatabase();
 
@@ -32,11 +31,10 @@ namespace RedisTest.Broadcaster
             Console.WriteLine($"New value = {cacheValue}");
 
             var number = 1;
-            const int pageSize = 10;
+            const int pageSize = 10000;
 
             while (true)
             {
-
                 var tasks = new List<Task>();
 
                 for (var i = number; i < number + pageSize; i++)

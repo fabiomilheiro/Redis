@@ -14,9 +14,7 @@ namespace RedisTest.Shared
             SetDefaultColors();
             WriteLine($"Subscriber {subscriberId} starting...");
 
-            var redis =
-                await ConnectionMultiplexer.ConnectAsync(
-                    "localhost");
+            var redis = await ConnectionMultiplexer.ConnectAsync("localhost");
 
             var db = redis.GetDatabase();
             var numberOfMessagesReceived = 0;
